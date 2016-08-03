@@ -6,7 +6,6 @@
 #include "en_keymap.h"
 
 
-
 KeyBoard::KeyBoard(QWidget *parent)
     : QWidget(parent)
 {
@@ -24,10 +23,9 @@ KeyBoard::KeyBoard(QWidget *parent)
 			iter != m_allKeys.end(); iter++, i++) {
 		mapper->setMapping((*iter), i);
 		connect(*iter, SIGNAL(clicked()), mapper, SLOT(map()));
-		//qDebug() << (*iter)->text();
+        //qDebug() << (*iter)->text();;
 	}
     setKeyMap(en_lower_keymap);
-
 
     //setFocusPolicy(Qt::NoFocus);
     //setAttribute(Qt::WA_ShowWithoutActivating);
@@ -38,7 +36,6 @@ KeyBoard::KeyBoard(QWidget *parent)
     setAttribute(Qt::WA_ShowWithoutActivating);
     //setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::WindowTransparentForInput | Qt::WindowDoesNotAcceptFocus | Qt::Tool );
     setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::WindowDoesNotAcceptFocus | Qt::Tool );
-
 }
 
 KeyBoard::~KeyBoard()
